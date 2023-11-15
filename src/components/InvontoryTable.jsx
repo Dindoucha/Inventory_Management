@@ -8,7 +8,7 @@ import {
 import { useSelector } from 'react-redux';
 
 export default function InvontoryTable() {
-  const inventory = useSelector(state=>state.inventory)
+  const inventory = useSelector(state=>state.inventory.inventory)
   console.log(inventory)
   return (
     <Table>
