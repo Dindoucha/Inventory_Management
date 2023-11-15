@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useDispatch } from 'react-redux';
 import BarcodeScannerComponent from "./BarcodeScannerComponent";
 import beepSound from "../assets/beep.mp3"
+import { addItem } from '../InventorySlice';
 import { Block } from "konsta/react";
-function BarcodeScanner() {
-  const [data, setData] = useState("Not Found");
 
+function BarcodeScanner() {
+  const dispatch = useDispatch()
+  const handleAddItem = (title) => {
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('en-CA');
+    dispatch(addItem({ title, date: formattedDate }));
+  };
+  
   const playBeepSound = () => {
     const audio = new Audio(beepSound);
     audio.play();
@@ -12,10 +19,8 @@ function BarcodeScanner() {
 
   const handleScan = (err, result) => {
     if (result) {
-      setData(result.text);
+      handleAddItem(result.text)
       playBeepSound();
-    } else {
-      setData("Not Found");
     }
   };
 
