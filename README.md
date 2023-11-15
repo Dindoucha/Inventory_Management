@@ -1,2 +1,2 @@
-# Inventory_Management
+# wr-scanner
 Created with CodeSandbox
