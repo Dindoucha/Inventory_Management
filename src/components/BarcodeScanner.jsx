@@ -1,7 +1,7 @@
 import { useState } from "react";
-import BarcodeScannerComponent from "react-qr-barcode-scanner";
+import BarcodeScannerComponent from "./BarcodeScannerComponent";
 import beepSound from "../assets/beep.mp3"
-
+import { Block } from "konsta/react";
 function BarcodeScanner() {
   const [data, setData] = useState("Not Found");
 
@@ -20,15 +20,12 @@ function BarcodeScanner() {
   };
 
   return (
-    <>
+    <Block strong inset className="space-y-4">  
       <BarcodeScannerComponent
-        width={500}
-        height={500}
         onUpdate={handleScan}
         delay={3000}
       />
-      <p>{data}</p>
-    </>
+    </Block>
   );
 }
 
