@@ -6,7 +6,7 @@ const BarcodeScannerComponent = ({
   onUpdate,
   onError,
   width = "100%",
-  height = "50%",
+  height = "100%",
   facingMode = "environment",
   torch,
   delay = 500,

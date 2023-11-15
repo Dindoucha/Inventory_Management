@@ -20,7 +20,7 @@ function BarcodeScanner() {
   };
 
   return (
-    <Block strong inset className="space-y-4">  
+    <Block strong inset className="space-y-4 h-4/6">  
       <BarcodeScannerComponent
         onUpdate={handleScan}
         delay={3000}
