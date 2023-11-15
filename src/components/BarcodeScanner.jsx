@@ -1,8 +1,8 @@
 import { useState } from "react";
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
-import beepSound from "./assets/beep.mp3";
+import beepSound from "../assets/beep.mp3"
 
-function App() {
+function BarcodeScanner() {
   const [data, setData] = useState("Not Found");
 
   const playBeepSound = () => {
@@ -32,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export default BarcodeScanner;
