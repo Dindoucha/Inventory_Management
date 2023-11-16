@@ -15,7 +15,7 @@ export default function InvontoryTable() {
     <Table>
       <TableHead>
       <TableRow header>
-        <TableCell header>Date</TableCell>
+        <TableCell header  colspan="2">Date</TableCell>
         <TableCell header className="text-right">
           Boite N°
         </TableCell>
@@ -27,7 +27,7 @@ export default function InvontoryTable() {
     <TableBody>
       {inventory.map(item=>(
         <TableRow key={item.title}>
-          <TableCell>{item.date}</TableCell>
+          <TableCell colspan="2">{item.date}</TableCell>
           <TableCell className="text-right">{item.title}</TableCell>
           <TableCell className="text-right">{item.quantity}</TableCell>
         </TableRow>
