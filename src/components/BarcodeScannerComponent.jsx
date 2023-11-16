@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserMultiFormatReader } from "@zxing/library";
+// import { BrowserMultiFormatReader } from "@zxing/library";
+import { QRCodeReader } from "@zxing/library"
 import Webcam from "react-webcam";
 
 const BarcodeScannerComponent = ({
@@ -16,7 +17,7 @@ const BarcodeScannerComponent = ({
   const webcamRef = React.useRef(null);
 
   const capture = React.useCallback(() => {
-    const codeReader = new BrowserMultiFormatReader();
+    const codeReader = new QRCodeReader();
     const imageSrc = webcamRef?.current?.getScreenshot();
     if (imageSrc) {
       codeReader
