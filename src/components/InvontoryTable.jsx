@@ -4,19 +4,20 @@ import {
   TableBody,
   TableCell,
   TableRow,
+  Block
 } from 'konsta/react';
 import { useSelector } from 'react-redux';
 
 export default function InvontoryTable() {
   const inventory = useSelector(state=>state.inventory.inventory)
-  console.log(inventory)
   return (
+  <Block strong inset className="space-y-4">
     <Table>
       <TableHead>
       <TableRow header>
         <TableCell header>Date</TableCell>
         <TableCell header className="text-right">
-          Box N°
+          Boite N°
         </TableCell>
         <TableCell header className="text-right">
           Quantity
@@ -32,6 +33,7 @@ export default function InvontoryTable() {
         </TableRow>
       ))}
     </TableBody>
-  </Table>
+    </Table>
+  </Block>
   );
 }

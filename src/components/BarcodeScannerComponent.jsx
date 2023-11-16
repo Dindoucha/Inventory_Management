@@ -1,5 +1,4 @@
 import React from "react";
-// import { BrowserMultiFormatReader } from "@zxing/library";
 import { BrowserQRCodeReader } from "@zxing/library"
 import Webcam from "react-webcam";
 

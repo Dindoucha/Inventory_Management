@@ -7,7 +7,7 @@ import {
   Block,
   Icon,
 } from 'konsta/react';
-import { MdBarcodeReader } from "react-icons/md";
+import { MdBarcodeReader, MdOutlineTableChart, MdOutlineSettings } from "react-icons/md";
 import BarcodeScanner from './components/BarcodeScanner';
 import InvontoryTable from './components/InvontoryTable'
 export default function TabbarPage() {
@@ -43,7 +43,7 @@ export default function TabbarPage() {
           icon={
             isTabbarIcons && (
               <Icon
-                material={<MdBarcodeReader className="w-6 h-6" />}
+                material={<MdOutlineTableChart className="w-6 h-6" />}
               />
             )
           }
@@ -55,7 +55,7 @@ export default function TabbarPage() {
           icon={
             isTabbarIcons && (
               <Icon
-                material={<MdBarcodeReader className="w-6 h-6" />}
+                material={<MdOutlineSettings className="w-6 h-6" />}
               />
             )
           }
@@ -64,45 +64,8 @@ export default function TabbarPage() {
       </Tabbar>
 
       {activeTab === 'tab-1' && <BarcodeScanner />}
-      {activeTab === 'tab-2' && (
-        <Block strong inset className="space-y-4">
-          <InvontoryTable />
-        </Block>
-      )}
-      {activeTab === 'tab-3' && (
-        <Block strong inset className="space-y-4">
-          <p>
-            <b>Tab 3</b>
-          </p>
-          <p>
-            <span>
-              Vero esse ab natus neque commodi aut quidem nobis. Unde, quam
-              asperiores. A labore quod commodi autem explicabo distinctio saepe
-              ex amet iste recusandae porro consectetur, sed dolorum sapiente
-              voluptatibus?
-            </span>
-            <span>
-              Commodi ipsum, voluptatem obcaecati voluptatibus illum hic aliquam
-              veritatis modi natus unde, assumenda expedita, esse eum fugit?
-              Saepe aliquam ipsam illum nihil facilis, laborum quia, eius ea
-              dolores molestias dicta.
-            </span>
-            <span>
-              Consequatur quam laudantium, magnam facere ducimus tempora
-              temporibus omnis cupiditate obcaecati tempore? Odit qui a,
-              voluptas eveniet similique, doloribus eum dolorum ad, enim ea
-              itaque voluptates porro minima. Omnis, magnam.
-            </span>
-            <span>
-              Debitis, delectus! Eligendi excepturi rem veritatis, ad
-              exercitationem tempore eveniet voluptates aut labore harum dolorem
-              nemo repellendus accusantium quibusdam neque? Itaque iusto
-              quisquam reprehenderit aperiam maiores dicta iure necessitatibus
-              est.
-            </span>
-          </p>
-        </Block>
-      )}
+      {activeTab === 'tab-2' && <InvontoryTable />}
+      {activeTab === 'tab-3' && (<Block strong inset className="space-y-4"></Block>)}
     </Page>
   );
 }

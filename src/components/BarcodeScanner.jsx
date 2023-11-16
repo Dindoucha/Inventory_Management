@@ -8,7 +8,13 @@ function BarcodeScanner() {
   const dispatch = useDispatch()
   const handleAddItem = (title) => {
     const currentDate = new Date();
-    const formattedDate = currentDate.toLocaleDateString('en-CA');
+    const formattedDate = currentDate.toLocaleString('en-CA', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
     dispatch(addItem({ title, date: formattedDate }));
   };
   
